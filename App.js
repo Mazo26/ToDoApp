@@ -8,6 +8,9 @@ export default function App() {
   const [openModal, setOpenModal] = useState(false);
 
   const handleAddButton = (goalTitle) => {
+    if (goalTitle.length === 0) {
+      return;
+    }
     setGoalsList((currentGoals) => [
       ...currentGoals,
       { id: Math.random().toString(), value: goalTitle },
